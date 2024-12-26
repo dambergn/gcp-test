@@ -1,3 +1,8 @@
+# Option 1: Specify a logs bucket
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+
 steps:
   # Step 1: Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
