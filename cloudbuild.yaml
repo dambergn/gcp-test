@@ -8,7 +8,7 @@ steps:
     args:
       - build
       - '-t'
-      - 'gcr.io/$PROJECT_ID/gcp-test-01:$SHORT_SHA'
+      - 'gcr.io/$PROJECT_ID/nginx-test-01:$SHORT_SHA'
       - '.'
 
   # Step 2: Deploy to Cloud Run
@@ -17,9 +17,9 @@ steps:
     args:
       - 'run'
       - 'deploy'
-      - 'gcp-test-01'
+      - 'nginx-test-01'
       - '--image'
-      - 'gcr.io/$PROJECT_ID/gcp-test-01:$SHORT_SHA'
+      - 'gcr.io/$PROJECT_ID/nginx-test-01:$SHORT_SHA'
       - '--platform'
       - 'managed'
       - '--region'
@@ -27,4 +27,4 @@ steps:
       - '--allow-unauthenticated'
 timeout: 1200s
 images:
-  - 'gcr.io/$PROJECT_ID/gcp-test-01:$SHORT_SHA'
+  - 'gcr.io/$PROJECT_ID/nginx-test-01:$SHORT_SHA'
