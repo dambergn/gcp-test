@@ -4,9 +4,6 @@ FROM ubuntu:20.04
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the basic webpage files
-COPY index.html .
-
 # Install Nginx
 RUN apt-get update && \
     apt-get install -y nginx && \
@@ -15,6 +12,9 @@ RUN apt-get update && \
 
 # Copy the default Nginx configuration file
 COPY default.conf /etc/nginx/conf.d/
+
+# Copy the basic webpage files
+COPY index.html /app
 
 # Expose port 80 for web traffic
 EXPOSE 80
