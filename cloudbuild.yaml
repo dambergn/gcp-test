@@ -1,6 +1,6 @@
 # Option 1: Specify a logs bucket
 options:
-  logging: NONE
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
 
 steps:
   # Step 1: Build the Docker image
