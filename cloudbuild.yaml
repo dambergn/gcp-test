@@ -21,6 +21,6 @@ steps:
       - '--region'
       - 'us-central1'
       - '--allow-unauthenticated'
-
+timeout: 1200s
 images:
   - 'gcr.io/$PROJECT_ID/basic-nginx-webpage:$SHORT_SHA'
