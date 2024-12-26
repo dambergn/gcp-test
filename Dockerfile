@@ -7,7 +7,8 @@ WORKDIR /app
 # Install Nginx
 RUN apt-get update && \
     apt-get install -y nginx && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* \
+    chown -R nginx:nxinx /app
 
 # Copy the default Nginx configuration file
 COPY default.conf /etc/nginx/conf.d/
