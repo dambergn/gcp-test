@@ -8,8 +8,14 @@ RUN apt-get update && \
     mkdir /var/www/app \
     chown -R nginx:nxinx /var/www/app
 
-# Copy the default Nginx configuration file
-COPY default.conf /etc/nginx/conf.d/
+# Remove the default Nginx configuration file
+RUN rm /etc/nginx/sites-enabled/default
+
+# Copy the custom Nginx configuration file
+COPY default.conf /etc/nginx/sites-available/
+
+# Create a symbolic link for your custom configuration
+RUN ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/
 
 # Copy the basic webpage files
 COPY index.html /var/www/app/

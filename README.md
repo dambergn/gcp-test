@@ -5,6 +5,6 @@ NGINX on Ubuntu 20.04
 -test4
 
 ```bash
-docker build -t nginx7 ./
-docker run -d -p 80:8081 --name ngin-test nginx7
+docker build -t nginx16 ./
+docker run -d -p 8081:80 --name nginx-test nginx16
 ```
