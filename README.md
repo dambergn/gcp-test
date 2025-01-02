@@ -2,7 +2,7 @@
 Testing GCP build functions
 
 NGINX on Ubuntu 20.04
--test5
+-test6
 
 ```bash
 docker build -t nginx16 ./
