@@ -17,7 +17,7 @@ steps:
     args:
       - 'run'
       - 'deploy'
-      - 'nginx-test-01'
+      - 'nginx-test-02'
       - '--image'
       - 'gcr.io/$PROJECT_ID/nginx-test-01:$SHORT_SHA'
       - '--platform'
@@ -25,6 +25,7 @@ steps:
       - '--region'
       - 'us-central1'
       - '--allow-unauthenticated'
+      - 'port 80'
 timeout: 1200s
 images:
   - 'gcr.io/$PROJECT_ID/nginx-test-01:$SHORT_SHA'
